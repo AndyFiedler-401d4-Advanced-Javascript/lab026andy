@@ -1,5 +1,5 @@
 import React from 'react';
-import './Main.scss';
+import './main.scss';
 
 class Main extends React.Component {
   constructor(props) {
@@ -11,24 +11,17 @@ class Main extends React.Component {
 
   handleButtonClick = e => {
     e.preventDefault();
-    this.setState({ stuff: Math.floor(Math.random() * 20 + 1) });
+    this.setState({ counter: Math.floor(Math.random() * 20 + 1) });
   };
 
   render() {
     return (
       <div>
-        <h4>{this.state.stuff}</h4>
+        <h4>{this.state.counter}</h4>
         <button onClick={this.handleButtonClick}>Click Me</button>
       </div>
     );
   }
 }
-
-
-
-
-
-
-
 
   export default Main;
