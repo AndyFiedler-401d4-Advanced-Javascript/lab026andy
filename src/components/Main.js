@@ -5,20 +5,22 @@ class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      stuff: 0,
+      counter: 0,
     };
   }
 
   handleButtonClick = e => {
     e.preventDefault();
-    this.setState({ counter: Math.floor(Math.random() * 20 + 1) });
+    const id = e.target.id;
+    this.setState(state => id === 'button1' ? state.counter++ : state.counter--);
   };
 
   render() {
     return (
       <div>
         <h4>{this.state.counter}</h4>
-        <button onClick={this.handleButtonClick}>Click Me</button>
+        <button id = "button1" onClick={this.handleButtonClick}>+1</button>
+        <button id = "button2" onClick={this.handleButtonClick}>-1</button>
       </div>
     );
   }
